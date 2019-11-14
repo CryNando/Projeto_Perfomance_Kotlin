@@ -1,11 +1,15 @@
 package com.example.projeto_perfomance_kotlin
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.projeto_perfomance_kotlin.viewmodels.IpGeolocationViewModel
 import com.example.projeto_perfomance_kotlin.viewmodels.NewsApiViewModel
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,7 +24,11 @@ class MainActivity : AppCompatActivity() {
         newsApiViewModel = ViewModelProvider(this).get(NewsApiViewModel::class.java)
 
         button_ip_geolocation.setOnClickListener {
-            ipGeolocationViewModel.getGeolocation()
+            GlobalScope.launch(Dispatchers.Main) {
+                val result = ipGeolocationViewModel.getGeolocation()
+                Log.d("RESULT", result)
+            }
+
         }
 
         button_news_api.setOnClickListener {

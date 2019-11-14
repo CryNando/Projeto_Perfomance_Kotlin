@@ -20,9 +20,9 @@ class IPGeolocationRepository(application: Application) {
         .build()
         .create(IpGeolocationApiInterface::class.java)
 
-    fun getNews() {
+    suspend fun getGeolocation(): List<IPGeolocation> {
         val ip = "200.148.226.100"
-        val call = api.getGeolocation(ip)
+        return api.getGeolocation(ip)
     }
 
     fun insert(ipGeolocation: IPGeolocation) {

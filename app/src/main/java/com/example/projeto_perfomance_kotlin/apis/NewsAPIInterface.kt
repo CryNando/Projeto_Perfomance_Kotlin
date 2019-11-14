@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface NewsAPIInterface {
 
-    @GET("v2/org/v2/everything")
+    @GET("v2/everything")
     fun getNews(
         @Query("q") q: String,
         @Query("from") from: String,

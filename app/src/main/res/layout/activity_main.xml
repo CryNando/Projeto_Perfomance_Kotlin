@@ -4,15 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/button_ip_geolocation"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="16dp"
+        android:background="#B00020"
+        android:text="Consume IP GEOLOCATION API"
+        app:layout_constraintBottom_toTopOf="@id/button_news_api"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_news_api"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="#B00020"
+        android:text="Consume NEWS API"
+        app:layout_constraintBottom_toTopOf="@id/button_save_ip_geolocation"
+        app:layout_constraintTop_toBottomOf="@id/button_ip_geolocation" />
+
+    <Button
+        android:id="@+id/button_save_ip_geolocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="#B00020"
+        android:text="SAVE IP GEOLOCATION data"
+        app:layout_constraintBottom_toTopOf="@id/button_save_news_api"
+        app:layout_constraintTop_toBottomOf="@id/button_news_api" />
+
+    <Button
+        android:id="@+id/button_save_news_api"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="#B00020"
+        android:text="SAVE NEWS API data"
+        app:layout_constraintBottom_toTopOf="@id/button_calculate_matrix_operation"
+        app:layout_constraintTop_toBottomOf="@id/button_save_ip_geolocation" />
+
+    <Button
+        android:id="@+id/button_calculate_matrix_operation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="#B00020"
+        android:text="Calculate matrix operation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_save_news_api" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
